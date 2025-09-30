@@ -45,7 +45,7 @@
             width: 100%;
             overflow: hidden;
             padding: 2rem 0;
-            background-color: #FFFFFF; /* Added white background to banner */
+            background-color: #FFFFFF;
             -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
             mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
@@ -73,6 +73,27 @@
                 margin: 0 3rem;
             }
         }
+
+        /* Added Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-element {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animated-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animated-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -82,7 +103,7 @@
       "name": "Dynamic Air Technologies",
       "image": "./logo.png",
       "@id": "",
-      "url": "YOUR_WEBSITE_URL_HERE",
+      "url": "https://www.dynamic-air-technologies.co.in/",
       "telephone": "+917027044992",
       "description": "Deals in New Screw & Reciprocating Air Compressor, Dryer, Receiver Tank, Line Filters & Replacement Spares of all Compressors.",
       "address": {
@@ -127,20 +148,19 @@
     <main>
         <section 
             id="home" 
-            class="relative bg-cover bg-center text-white" 
-            style="background-image: url('https://images.unsplash.com/photo-1621999997193-e22941343754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');">
+            class="relative text-gray-800 bg-gradient-to-r from-gray-100 to-gray-200">
             
-            <div class="absolute inset-0 bg-primary-blue bg-opacity-80"></div>
-            
-            <div class="relative container mx-auto px-6 pt-24 md:pt-36 text-center z-10">
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">Air Compressor Sales & Service</h1>
-                <p class="mt-4 text-2xl md:text-3xl font-montserrat text-gray-300">Your Trust, Our Commitment</p>
-                <p class="mt-6 text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto">We deal in new screw & reciprocating air compressors, dryers, receiver tanks, line filters & replacement spares for all major brands.</p>
-                <a href="#contact" class="mt-10 inline-block bg-secondary-blue text-white py-4 px-10 rounded-full text-xl font-semibold hover-bg-secondary-dark transition shadow-lg transform hover:scale-105">Request a Service</a>
+            <div class="container mx-auto px-6 pt-24 md:pt-36 text-center z-10">
+                <div class="fade-in-element">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-primary-blue">Air Compressor Sales & Service</h1>
+                    <p class="mt-4 text-2xl md:text-3xl font-montserrat text-secondary-blue">Your Trust, Our Commitment</p>
+                    <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">We deal in new screw & reciprocating air compressors, dryers, receiver tanks, line filters & replacement spares for all major brands.</p>
+                    <a href="#contact" class="mt-10 inline-block bg-secondary-blue text-white py-4 px-10 rounded-full text-xl font-semibold hover-bg-secondary-dark transition shadow-lg transform hover:scale-105">Request a Service</a>
+                </div>
             </div>
             
             <div class="relative mt-20 z-10">
-                <h3 class="text-center text-lg font-semibold text-gray-200 uppercase tracking-widest">Trusted Brands We Service</h3>
+                <h3 class="text-center text-lg font-semibold text-gray-500 uppercase tracking-widest">Trusted Brands We Service</h3>
                 <div class="logo-banner-container">
                     <div class="logo-banner-wrapper">
                         <img src="./ingersoll-rand.png" alt="Ingersoll Rand Logo" class="logo-item">
@@ -157,6 +177,7 @@
                 </div>
             </div>
         </section>
+
         <section id="services" class="py-20 bg-gray-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -164,21 +185,21 @@
                     <p class="text-gray-600 mt-4 text-lg">From sales to ongoing support, we've got your compressed air needs covered.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-10">
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="animated-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
                         <div class="text-secondary-blue mb-5 flex justify-center">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13h10M7 17h10M7 9h10m-3 5v2m0-8V6m0 4h.01M17 17h.01M12 21a9 9 0 110-18 9 9 0 010 18zm-2-7h4m-4-4h4"></path></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-primary-blue mb-3 text-center">New Compressor Sales</h3>
                         <p class="text-gray-600 text-center">Offering the latest Screw & Reciprocating Air Compressors from leading brands, tailored to your industrial requirements.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="animated-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
                         <div class="text-secondary-blue mb-5 flex justify-center">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4h-.01M4 17h16M4 5h16M4 12h16m-4 5v-2m4 0v2m-4-2H8m0 0H4m12 0H8m4-5v2m0-2h.01M8 17h8"></path></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-primary-blue mb-3 text-center">Full System Solutions</h3>
                         <p class="text-gray-600 text-center">Providing comprehensive solutions including Dryers, Receiver Tanks, and Line Filters for optimal air quality and efficiency.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="animated-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
                         <div class="text-secondary-blue mb-5 flex justify-center">
                             <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0 3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         </div>
@@ -338,20 +359,14 @@
             });
         });
 
-        // NEW SCRIPT FOR WHATSAPP FORM
+        // WhatsApp Form Submission
         document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            // Your WhatsApp number (with country code, without '+')
             const whatsappNumber = '917027044992';
-
-            // Get form values
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-
-            // Create the message text
             const whatsappMessage = `
 *New Inquiry from Website*
 
@@ -360,12 +375,22 @@
 *Email:* ${email}
 *Message:* ${message}
             `;
-
-            // Create the WhatsApp URL
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-            // Open the URL in a new tab
             window.open(whatsappUrl, '_blank');
+        });
+
+        // Scroll Animations for Cards
+        const animatedCards = document.querySelectorAll('.animated-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedCards.forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>
